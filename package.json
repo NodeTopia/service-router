@@ -1,0 +1,25 @@
+{
+  "name": "service-router",
+  "version": "0.0.1",
+  "description": "Router service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NodeTopia/service-router.git"
+  },
+  "author": "Tim <mangoraft@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NodeTopia/service-router/issues"
+  },
+  "homepage": "https://github.com/NodeTopia/service-router#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "nconf": "^0.10.0",
+    "nodetopia-kue": "git+https://github.com/NodeTopia/Kue.git",
+    "nodetopia-model": "git+https://github.com/NodeTopia/Model.git"
+  }
+}
