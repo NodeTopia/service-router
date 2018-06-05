@@ -17,9 +17,8 @@
   },
   "homepage": "https://github.com/NodeTopia/service-router#readme",
   "dependencies": {
-    "async": "^2.6.0",
-    "nconf": "^0.10.0",
-    "nodetopia-kue": "git+https://github.com/NodeTopia/Kue.git",
-    "nodetopia-model": "git+https://github.com/NodeTopia/Model.git"
+    "async": "^2.6.1",
+    "jerkie": "0.0.2",
+    "redis": "^2.8.0"
   }
 }

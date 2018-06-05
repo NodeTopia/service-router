@@ -1,24 +1,22 @@
-var nconf = require('nconf');
+const Jerkie = require('jerkie');
+const path = require('path');
 
-nconf.file({
-	file : require('path').resolve(process.argv[2])
+
+
+let service = new Jerkie({
+    redis: process.env.REDIS_URI,
+    name: 'router',
+    schema: path.resolve(__dirname, './schema'),
+    services: path.resolve(__dirname, './services'),
+    methods: {
+
+    },
+    start: async function () {
+
+    },
+    stop: function () {
+
+    }
 });
-nconf.env();
 
-/*
- * host functions
- */
-require('./add-host');
-require('./add-url');
-require('./remove-host');
-require('./remove-url');
-/*
- * tls functions
- */
-require('./add-tls');
-require('./remove-tls');
-/*
- * info functions
- */
-
-require('./info');
+service.start();
