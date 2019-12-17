@@ -17,7 +17,6 @@ routes.push({
     params: {
         route: {type: "string"},
         reference: {type: "string"},
-        organization: {type: "string"},
         metricSession: {type: "string"},
         logSession: {type: "string"}
     },
@@ -29,7 +28,7 @@ routes.push({
         let routeModel;
 
 
-        let {route, reference, name, organization, metricSession, logSession} = data;
+        let {route, reference, name, metricSession, logSession} = data;
 
 
         try {
@@ -47,7 +46,6 @@ routes.push({
             route: route,
             name: name,
             reference: reference,
-            organization: organization,
             metricSession: metricSession,
             logSession: logSession
         });

@@ -15,11 +15,11 @@ routes.push({
         version: 1,
         concurrency: 100
     },
-    params: {
-        route: {type: "string"},
-        host: {type: "string"},
-        port: {type: "number"}
-    },
+    //params: {
+        //route: {type: "string"},
+        //host: {type: "string"},
+        //port: {type: "number"}
+    //},
     service: async function (resolve, reject) {
 
         let ctx = this;

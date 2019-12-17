@@ -22,23 +22,22 @@ routes.push({
         let redis;
 
         let {
-            type,
             host,
             port,
             auth,
-            master,
-        } = data
+            master
+        } = data;
 
         try {
             redis = await schema.Redis.findOne({
-                type: type,
+                type: 'router',
                 host: host,
                 port: port,
                 auth: auth,
                 master: master
             })
             if (redis) {
-                return reject(new Error('redis ' + type + ' already used'))
+                return reject(new Error('redis ' + `${host}:${port}` + ' already used'))
             }
         } catch (err) {
             return reject(err)
@@ -49,7 +48,7 @@ routes.push({
             auth: auth,
             host: host,
             port: port,
-            type: type
+            type: 'router'
         });
 
         try {

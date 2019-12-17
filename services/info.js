@@ -22,9 +22,11 @@ routes.push({
         let routeModel;
 
         let route = data.route;
+        let reference = data.reference;
+        let many = data.many;
 
         try {
-            routeModel = await schema.Route.findOne({
+            routeModel = await schema.Route[many ? 'find' : 'findOne']({
                 $or: [{route: route}, {reference: reference}]
             })
             if (!routeModel) {
@@ -33,7 +35,7 @@ routes.push({
         } catch (err) {
             return reject(err)
         }
-
+        return resolve(routeModel)
         let frontend = 'frontend:' + route;
 
         schema.Redis.getDB('router', function (next) {
